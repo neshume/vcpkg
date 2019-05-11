@@ -19,8 +19,8 @@ string(REPLACE "${CURRENT_INSTALLED_DIR}/tools/osg/" "" OSG_PLUGINS_SUBDIR "${OS
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO neshume/osgearth
-    REF osgearth-2.8.2
-    SHA512   6d1888ad898eb98cf32bea8226bc1165a50021757b396c2dea70bd9660edfe9abea8eeac7fe8073632e446303f50fdd86ffb582c7815f62450f0e24f2df87d47 
+    REF osgearth-2.8.3
+    SHA512   e2ec07a28c1833b9712b52bf62ccfae31ba0a44b79505b6357da549d8f49e4ed1356005206a67a7235aa796fc0d7b4599fcfbe2ebb22f8b53d77e4a21ae501d7 
     HEAD_REF master
     #PATCHES ${VS2017PATCH}
 )
