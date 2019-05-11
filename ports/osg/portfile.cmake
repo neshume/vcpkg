@@ -19,11 +19,11 @@ endif()
 vcpkg_from_github(
 	OUT_SOURCE_PATH SOURCE_PATH
 	REPO openscenegraph/OpenSceneGraph
-	REF OpenSceneGraph-3.4.0
-	SHA512 6949dd4dea9dcffe4228086b72eafdb253bf1403b3b7a70a4727848c3cde23ad0270f41b1c3e2bdbfd410ec067ecce2052a5d26c61b032b6d46ce84b8c931bfb
+	REF OpenSceneGraph-3.4.1
+	SHA512  4a65625e208d24256b5564bbe9d6f557758b51fae0acf85d1f71968a237fec299088536830fc862d25e02039de9ea13176b298a68aaa644eac958acbe1f4e143
 	HEAD_REF master
-   # PATCHES
-    #    "${CMAKE_CURRENT_LIST_DIR}/collada.patch"
+    PATCHES
+        "${CMAKE_CURRENT_LIST_DIR}/collada.patch"
 )
 
 vcpkg_configure_cmake(
@@ -49,12 +49,12 @@ file(REMOVE_RECURSE ${OSG_TOOLS})
 file(GLOB OSG_TOOLS_DBG ${CURRENT_PACKAGES_DIR}/debug/bin/*.exe)
 file(REMOVE_RECURSE ${OSG_TOOLS_DBG})
 
-file(GLOB OSG_PLUGINS_DBG ${CURRENT_PACKAGES_DIR}/debug/bin/osgPlugins-3.4.0/*.dll)
-file(COPY ${OSG_PLUGINS_DBG} DESTINATION ${CURRENT_PACKAGES_DIR}/debug/tools/osg/osgPlugins-3.4.0)
-file(GLOB OSG_PLUGINS_REL ${CURRENT_PACKAGES_DIR}/bin/osgPlugins-3.4.0/*.dll)
-file(COPY ${OSG_PLUGINS_REL} DESTINATION ${OSG_TOOL_PATH}/osgPlugins-3.4.0)
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/bin/osgPlugins-3.4.0/)
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/bin/osgPlugins-3.4.0/)
+file(GLOB OSG_PLUGINS_DBG ${CURRENT_PACKAGES_DIR}/debug/bin/osgPlugins-3.4.1/*.dll)
+file(COPY ${OSG_PLUGINS_DBG} DESTINATION ${CURRENT_PACKAGES_DIR}/debug/tools/osg/osgPlugins-3.4.1)
+file(GLOB OSG_PLUGINS_REL ${CURRENT_PACKAGES_DIR}/bin/osgPlugins-3.4.1/*.dll)
+file(COPY ${OSG_PLUGINS_REL} DESTINATION ${OSG_TOOL_PATH}/osgPlugins-3.4.1)
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/bin/osgPlugins-3.4.1/)
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/bin/osgPlugins-3.4.1/)
 
 # Handle copyright
 file(COPY ${SOURCE_PATH}/LICENSE.txt DESTINATION ${CURRENT_PACKAGES_DIR}/share/osg)
