@@ -9,12 +9,12 @@ if(NOT OSG_PLUGINS_SUBDIR_LENGTH EQUAL 1)
 endif()
 string(REPLACE "${CURRENT_INSTALLED_DIR}/tools/osg/" "" OSG_PLUGINS_SUBDIR "${OSG_PLUGINS_SUBDIR}")
 
-#vcpkg_download_distfile(
-#    VS2017PATCH
-#    URLS "https://github.com/remoe/osgearth/commit/f7081cc4f9991c955c6a0ef7b7b50e48360d14fd.diff"
-#    FILENAME "osgearth-f7081cc4f9991c955c6a0ef7b7b50e48360d14fd.patch"
-#    SHA512 47bdbed22ecaae0a14d3c3ec6851f1303d8db2265a4c878dc34b0a052ce0a4195aa2e55110386b2c93a49f7b65d8577ebe78489bdf20cbc8c41a54bca7516bab
-#)
+vcpkg_download_distfile(
+    VS2017PATCH
+    URLS "https://github.com/remoe/osgearth/commit/f7081cc4f9991c955c6a0ef7b7b50e48360d14fd.diff"
+    FILENAME "osgearth-f7081cc4f9991c955c6a0ef7b7b50e48360d14fd.patch"
+    SHA512 eadb47a5713c00c05add8627e5cad22844db041da34081d59104151a1a1e2d5ac9552909d67171bfc0449a3e4d2930dd3a7914d3ec7ef7ff1015574e9c9a6105
+)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
@@ -22,7 +22,7 @@ vcpkg_from_github(
     REF osgearth-2.8.4
     SHA512   e20c4489b560cc188dab934e0ca9070f0514e911368a9b53459eb446b6a62a03a1e121aece0efd598d428309584b3b96331a2b8838e4aad9002daa53d8e443ff 
     HEAD_REF master
-    #PATCHES ${VS2017PATCH}
+    PATCHES ${VS2017PATCH}
 )
 
 vcpkg_configure_cmake(
