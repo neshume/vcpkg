@@ -2,7 +2,7 @@ include(vcpkg_common_functions)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO OSGeo/PROJ
+    REPO neshume/PROJ
     REF 6.2.0
     SHA512 035c138e1a7794760652906daaf3c8a42cb6431ad9062a42ec2f8d721ead25394407fdd52560c5f1fc8668a0167459fdbe47c6392de23c1474304ea26b8a3a33
     HEAD_REF master
